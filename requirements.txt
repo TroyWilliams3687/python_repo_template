@@ -55,15 +55,14 @@ build  # $ python -m build
 # They should be installed when we install the app. They are strictly required
 # here but offer another form of documentation.
 
-# For Timezones on Windows. On linux, it will use the system binaries first
-tzdata
-
-# Add other packages here:
+tzdata  # For Timezones on Windows. On linux, it will use the system binaries first
 click
-toml       # for all the configuration files
-pyyaml     # for extracting the yaml block from the markdown files.
+toml
+pyyaml
 appdirs
-requests
-networkx
-matplotlib
 
+
+# ------------
+# Custom Repo
+
+mddocs @ git+ssh://troy@odin.home.bluebill.net:10000/home/troy/repositories/shared/md_docs.git
