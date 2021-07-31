@@ -16,6 +16,18 @@
 
 # assumes you have Jupyter notebook or Jupyter lab or both.
 
+#----
+# Assumed Variables
+
+# It is assumed that these variables are already defined, most likely in the `Makefile.python`
+
+# The name of the virtual environment to use
+# VENV=.venv
+
+# The path to the bin folder in the virtual environment. We define this
+# so we can use the correct binaries
+# BIN?=$(VENV)/bin
+
 
 #-----
 # make launch
