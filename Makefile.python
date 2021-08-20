@@ -40,7 +40,8 @@
 # https://www.gnu.org/software/make/manual/html_node/How-Make-Works.html
 # https://stackoverflow.com/questions/2057689/how-does-make-app-know-default-target-to-build-if-no-target-is-specified
 
-# NOTE: We would have to override the .DEFAULT_GOAL in the main Makefile, after the include
+# NOTE: We would have to override the .DEFAULT_GOAL in the main Makefile, after
+# the include
 
 .DEFAULT_GOAL := help
 
@@ -57,9 +58,6 @@
 # -----------
 # Variables
 
-# Load up any requirements files so we can install them into the venv. Multiple
-# paths are supported (space separated)
-REQUIREMENTS_TXT?=$(wildcard requirements.txt)
 
 # The install_marker indicates that the .venv was created and initialized by the
 # makefile - no need to install things to it again
@@ -74,10 +72,13 @@ export PATH := $(BIN):$(PATH)
 
 $(VENV):
 	@echo "Constructing Virtual Environment..."
-	$(PY) -m venv $@
+	@$(PY) -m venv $@
 
 	@echo "Upgrading pip, setuptools and wheel..."
-	$(BIN)/python -m pip install --upgrade pip setuptools wheel
+	@$(BIN)/python -m pip install --upgrade pip setuptools wheel
+
+	@echo "Installing pyenv to manage the Virtual Environment..."
+	@$(BIN)/python -m pip install pipenv
 
 	@# install the pretty errors module and set it up to format errors globally
 	@# for the virtual environment
@@ -97,43 +98,13 @@ $(VENV):
 	@touch $(VENV)
 
 # -----------
-# Virtual Environment (Dependencies)
-
-# Do we have any requirements files? List them and install
-ifneq ($(strip $(REQUIREMENTS_TXT)),)
-VENV_DEP+=$(REQUIREMENTS_TXT)
-endif
-
-# Do we have a setup.py or setup.cfg? That would indicate a package, let's
-# install that
-ifneq ($(wildcard setup.py),)
-VENV_DEP+=setup.py
-endif
-
-ifneq ($(wildcard setup.cfg),)
-VENV_DEP+=setup.cfg
-endif
-
-# -----------
 # Virtual Environment - Installation Marker
 
-# Install the requirements and the custom package, if this directory is a custom
-# package. It will also write a marker file indicating that the dependencies
-# were installed by the makefile
+# simply a marker file that indicates things have already been installed to the
+# venv
 
 $(VENV)/$(MARKER): $(VENV_DEP) | $(VENV)
-ifneq ($(strip $(REQUIREMENTS_TXT)),)
-	@echo "Installing Requirements..."
-	$(BIN)/pip install $(foreach path,$(REQUIREMENTS_TXT),-r $(path))
-endif
-
-# The project does require a stub `setup.py` file that calls setuptools.setup
-# () for pip install to work correctly
-ifneq ($(wildcard setup.py),)
-	@echo "Installing Custom Package..."
-	$(BIN)/python -m pip install -e .
-endif
-
+	@$(BIN)/python -m pipenv install --dev
 	@touch $(VENV)/$(MARKER)
 
 # -----------
@@ -161,7 +132,7 @@ show-venv: venv
 debug-venv:
 	@$(MAKE) --version
 	@$(info PY="$(PY)")
-	@$(info REQUIREMENTS_TXT="$(REQUIREMENTS_TXT)")
+# 	@$(info REQUIREMENTS_TXT="$(REQUIREMENTS_TXT)")
 	@$(info VENV="$(VENV)")
 	@$(info VENV_DEP="$(VENV_DEP)")
 
