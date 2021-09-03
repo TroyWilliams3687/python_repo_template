@@ -178,6 +178,10 @@ python: venv
 .PHONY: shell
 shell: venv
 	@echo "Activating $(VENV)..."
+	@echo ""
+# 	RED='\033[0;31m' # Red
+# 	NC='\033[0m' # No Color
+	@echo -e "Set an alias in .bashrc -> \033[0;31malias activate=\"source .venv/bin/activate\"\033[0m"
 	@bash --rcfile $(BIN)/activate -i
 
 # -----------
