@@ -1,3 +1,11 @@
+# ------------
+# Dev Dependencies
+
+# These are the dependencies that are typically only required in the development
+# environment like formatters or linters. They are not typically required in
+# production.
+
+
 # ----------
 # Quality Control and Build Dependencies - Virtual Environment Only
 
@@ -12,16 +20,17 @@ pytest
 black
 
 # ----------
-# Linters - Static Code Quality - these are the current modules I am interested in using
+# Linters - Static Code Quality - these are the current modules I am interested
+# in using
 
-flake8
-flake8-annotations-complexity
-flake8-breakpoint
-flake8-builtins
-flake8-comprehensions
-flake8-eradicate
-flake8-expression-complexity
-pep8-naming
+# flake8
+# flake8-annotations-complexity
+# flake8-breakpoint
+# flake8-builtins
+# flake8-comprehensions
+# flake8-eradicate
+# flake8-expression-complexity
+# pep8-naming
 # flake8-isort
 # flake8-logging-format
 # flake8-requirements
@@ -51,8 +60,8 @@ vulture  # search for deadcode
 # ----------
 # Jupyter Notebooks
 
-jupyter
-jupyter_contrib_nbextensions
-jupyter_nbextensions_configurator
-jupyterlab
-ipympl
+# jupyter
+# jupyter_contrib_nbextensions
+# jupyter_nbextensions_configurator
+# jupyterlab
+# ipympl

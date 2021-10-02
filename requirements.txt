@@ -20,6 +20,11 @@ tabulate # Dataframe.to_markdown
 # ------------
 # Custom Repo
 
-# custom git repos would be installed here.
+# custom git repos would be installed here. You can use the following syntax to
+# install packages from git repos.
 
-bluebill @ git+ssh://troy@odin.home.bluebill.net:10000/home/troy/repositories/shared/bluebill.common.git
+# NOTE: For GitHub, it will provide an URL with
+# colon separting the github.com from the user name. You need to replace that
+# with a slash for things to work properly
+
+# hindsight @ git+ssh://git@github.com/TroyWilliams3687/hindsight.git
