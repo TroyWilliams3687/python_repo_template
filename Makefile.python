@@ -67,10 +67,6 @@ $(VENV):
 	@# install the pretty errors module and set it up to format errors globally
 	@# for the virtual environment
 
-	@echo "Installing Pretty Errors..."
-	@$(BIN)/python -m pip install pretty_errors
-	@$(BIN)/python -m pretty_errors -s
-
 	@# `python -m pretty_errors -s` -s to install to the default system
 	@# location, in this case .venv @#
 	@# https://github.com/onelivesleft/PrettyErrors/blob/master/pretty_errors/__main__.py
@@ -109,7 +105,7 @@ endif
 $(VENV)/$(MARKER): $(VENV_DEP) | $(VENV)
 ifneq ($(strip $(REQUIREMENTS_TXT)),)
 	@echo "Installing Requirements..."
-	$(BIN)/pip install $(foreach path,$(REQUIREMENTS_TXT),-r $(path))
+	$(BIN)/python -m pip install $(foreach path,$(REQUIREMENTS_TXT),-r $(path))
 endif
 
 # The project does require a stub `setup.py` file that calls setuptools.setup
