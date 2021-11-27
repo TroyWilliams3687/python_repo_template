@@ -61,8 +61,8 @@ $(VENV):
 	@echo "Constructing Virtual Environment..."
 	$(PY) -m venv $@
 
-# 	@echo "Upgrading pip, setuptools and wheel..."
-# 	$(BIN)/python -m pip install --upgrade pip setuptools wheel
+	@echo "Upgrading pip, setuptools and wheel..."
+	$(BIN)/python -m pip install --upgrade pip setuptools wheel
 
 	@# NOTE: Running python -m will call the __main__.py module and can do some
 	@# wonderful things
