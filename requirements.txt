@@ -6,16 +6,30 @@
 # here but offer another form of documentation.
 
 appdirs
-click
-matplotlib
-numpy
-pandas
-pyyaml
 tzdata
+
+click
+
+numpy
+matplotlib
+pandas
 scipy
+
+pyyaml
+
 sqlalchemy
+
 tqdm
 tabulate # Dataframe.to_markdown
+
+# ----------
+# Jupyter Notebooks
+
+# jupyter
+# jupyter_contrib_nbextensions
+# jupyter_nbextensions_configurator
+# jupyterlab
+# ipympl
 
 # ------------
 # Custom Repo
