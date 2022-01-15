@@ -42,3 +42,9 @@ tabulate # Dataframe.to_markdown
 # with a slash for things to work properly
 
 # hindsight @ git+ssh://git@github.com/TroyWilliams3687/hindsight.git
+
+# bluebill @ git+ssh://troy@odin.home.bluebill.net:10000/home/troy/repositories/shared/bluebill.common.git
+
+# bluebill @ git+ssh://troy@server.bluebill.net:10000/home/troy/repositories/shared/bluebill.common.git
+
+# mddocs @ git+ssh://git@github.com/TroyWilliams3687/md_docs.git
