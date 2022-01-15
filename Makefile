@@ -1,6 +1,6 @@
 # -----------
 # SPDX-License-Identifier: MIT
-# Copyright (c) 2021 Troy Williams
+# Copyright (c) 2022 Troy Williams
 
 # uuid       = a65baace-238c-11ec-811e-5d4d4c500ca4
 # author     = Troy Williams

@@ -88,6 +88,10 @@ Optionally, you can include these makefiles to provide more specialized support.
 
 >NOTE: The `Makefile` support files are located in the `./mf_support` folder to clean up the repo of the root. They do tend to add noise that isn't necessary.
 
+## `mf_support`
+
+This folder contains the support files required by the `Makefile` in the repository. You should maintain copies of the support files so the repository can stand on its own.
+
 
 ## Basic Commands
 

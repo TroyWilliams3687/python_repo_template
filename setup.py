@@ -3,12 +3,12 @@
 
 # -----------
 # SPDX-License-Identifier: MIT
-# Copyright (c) 2021 Troy Williams
+# Copyright (c) 2022 Troy Williams
 
-# uuid:
+# uuid:   70b0c7b8-7622-11ec-a39f-bdfcf9d8f0c9
 # author: Troy Williams
 # email:  troy.williams@bluebill.net
-# date:
+# date:   2022-01-15
 # -----------
 
 """
