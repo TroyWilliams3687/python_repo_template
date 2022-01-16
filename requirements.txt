@@ -5,15 +5,17 @@
 # They should be installed when we install the app. They are strictly required
 # here but offer another form of documentation.
 
-appdirs
 tzdata
 
+appdirs
 click
+rich
 
 numpy
 matplotlib
 pandas
 scipy
+pint
 
 pyyaml
 
