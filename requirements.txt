@@ -5,7 +5,7 @@
 # They should be installed when we install the app. They are strictly required
 # here but offer another form of documentation.
 
-tzdata
+tzdata  # support ZoneInfo properly on Windows
 
 appdirs
 click
@@ -13,16 +13,18 @@ rich
 
 numpy
 matplotlib
-pandas
 scipy
-pint
+
+pandas
+tabulate # Dataframe.to_markdown
+
+pint  # Handle units - better than my library
 
 pyyaml
 
 sqlalchemy
 
 tqdm
-tabulate # Dataframe.to_markdown
 
 # ----------
 # Jupyter Notebooks
@@ -40,7 +42,7 @@ tabulate # Dataframe.to_markdown
 # install packages from git repos.
 
 # NOTE: For GitHub, it will provide an URL with
-# colon separting the github.com from the user name. You need to replace that
+# colon separating the github.com from the user name. You need to replace that
 # with a slash for things to work properly
 
 # NOTE: If you use ssh keys, they must be in your ssh agent or it will not be able to install
