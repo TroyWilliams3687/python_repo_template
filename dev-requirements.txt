@@ -5,6 +5,12 @@
 # environment like formatters or linters. They are not typically required in
 # production.
 
+# ---------
+# Make sure we have the latest tools
+
+pip
+setuptools
+wheel
 
 # ----------
 # Quality Control and Build Dependencies - Virtual Environment Only
