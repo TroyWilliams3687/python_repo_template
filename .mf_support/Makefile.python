@@ -118,6 +118,9 @@ endif
 .PHONY: venv
 venv: $(VENV)/$(MARKER)
 
+# NOTE: If you need to run any targets after the virtual environment is created, append them to the target i.e.
+# `venv: $(VENV)/$(MARKER) extensions`
+
 # -----------
 # make show-venv
 
