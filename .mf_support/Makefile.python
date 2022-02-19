@@ -98,7 +98,7 @@ endif
 $(VENV)/$(MARKER): $(VENV_DEP) | $(VENV)
 ifneq ($(strip $(REQUIREMENTS_TXT)),)
 	@echo "Installing Requirements..."
-	$(BIN)/python -m pip install --upgrade --force-reinstall --no-deps $(foreach path,$(REQUIREMENTS_TXT),-r $(path))
+	$(BIN)/python -m pip install --upgrade --force-reinstall $(foreach path,$(REQUIREMENTS_TXT),-r $(path))
 # 	$(BIN)/python -m pip install $(foreach path,$(REQUIREMENTS_TXT),-r $(path))
 endif
 
